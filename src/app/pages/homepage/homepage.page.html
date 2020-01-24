@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      To Do
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list *ngFor="let plan of plans">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../assets/icon/date.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ plan.plan.title }}</h2>
+        <h3>{{ plan.plan.location }}</h3>
+        <p>02.04.2020.</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- fab placed to the bottom start -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
