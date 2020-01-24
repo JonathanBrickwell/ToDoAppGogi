@@ -1,0 +1,7 @@
+{
+  "name": "ToDoGoKi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
