@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DbServiceService } from '../../services/db-service.service';
+import { Plans } from 'src/app/models/plans';
 
 @Component({
   selector: 'app-homepage',
@@ -9,30 +10,23 @@ import { DbServiceService } from '../../services/db-service.service';
 })
 export class HomepagePage implements OnInit {
 
-  plans = [];
+  newPlans: Plans[];
 
   constructor(private plansService: DbServiceService) { }
 
   ngOnInit() {
-    this.subscribeToPlans();
+    this.subscribeNewPlans();
   }
 
-  subscribeToPlans() {
-    return this.plansService.getPlans().subscribe(data => {
-      this.plans = data.map(result => {
-        return {
-          id: result.payload.doc.id,
-          plan: result.payload.doc.data()
-        };
-      });
-      this.iterateThroughPlans();
+  subscribeNewPlans() {
+    return this.plansService.getPlansData().subscribe(result => {
+      this.newPlans = result;
+      console.log(this.newPlans);
     });
   }
 
-  iterateThroughPlans() {
-      console.log('Ovo je čisti answers objekt: ', this.plans);
-      return this.plans.forEach(element => {
-        console.log(element.plan);
-      });
+  removeThePlan(planItem) {
+    this.plansService.deleteThePlan(planItem.id);
   }
+
 }

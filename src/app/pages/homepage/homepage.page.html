@@ -7,14 +7,14 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <ion-list *ngFor="let plan of plans">
+  <ion-list *ngFor="let plan of newPlans">
     <ion-item>
       <ion-avatar slot="start">
         <img src="../../assets/icon/date.png">
       </ion-avatar>
       <ion-label>
-        <h2>{{ plan.plan.title }}</h2>
-        <h3>{{ plan.plan.location }}</h3>
+        <h2>{{ plan.title }}</h2>
+        <h3>{{ plan.location }}</h3>
         <p>02.04.2020.</p>
       </ion-label>
     </ion-item>
