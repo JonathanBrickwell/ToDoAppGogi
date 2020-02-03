@@ -36,7 +36,7 @@ export class DbServiceService {
     return this.plans;
   }
 
-  createNewPlan(newPlan: Plans) {
+  createNewPlan(newPlan) {
     return this.firestore.collection('gokiplans').add(newPlan);
   }
 
