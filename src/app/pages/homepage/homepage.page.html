@@ -10,12 +10,12 @@
   <ion-list *ngFor="let plan of newPlans">
     <ion-item>
       <ion-avatar slot="start">
-        <img src="../../assets/icon/date.png">
+        <img src="../../../assets/icon/calendar.png">
       </ion-avatar>
       <ion-label>
         <h2>{{ plan.title }}</h2>
         <h3>{{ plan.location }}</h3>
-        <p>02.04.2020.</p>
+        <p>{{ plan.date }} - {{ plan.time }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
