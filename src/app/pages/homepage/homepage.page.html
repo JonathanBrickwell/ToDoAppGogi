@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Planer
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list *ngFor="let plan of newPlans">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../../assets/icon/calendar.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ plan.title }}</h2>
+        <h3>{{ plan.location }}</h3>
+        <p>{{ plan.date }} - {{ plan.time }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- fab placed to the bottom start -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/new-plan">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
