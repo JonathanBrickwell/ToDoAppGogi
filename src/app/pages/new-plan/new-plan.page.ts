@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DbServiceService } from '../../services/db-service.service';
 import { Plans } from 'src/app/models/plans';
+import { Categories } from 'src/app/models/plan-categories/categories.model';
 
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
@@ -14,6 +15,20 @@ import { ToastController } from '@ionic/angular';
 export class NewPlanPage implements OnInit {
 
   newPlan: Plans;
+  categories = [
+    {
+        name: 'Dinner'
+    },
+    {
+        name: 'Movie Night'
+    },
+    {
+        name: 'Date Night'
+    },
+    {
+        name: 'Coffee'
+    }
+  ];
 
   title: any;
   date: any;
