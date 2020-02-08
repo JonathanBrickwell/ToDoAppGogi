@@ -15,13 +15,16 @@
       <ion-label>
         <h2>{{ plan.title }}</h2>
         <h3>{{ plan.location }}</h3>
-        <p>{{ plan.date }} - {{ plan.time }}</p>
+        <p>{{ plan.date | date: 'short' }} - {{ plan.time }}</p>
       </ion-label>
+      <ion-avatar slot="end" (click)="deleteItemComfirmation(plan.id)">
+        <img src="../../../assets/icon/quit.png" alt="Delete Plan Icon" width="30" height="30">
+      </ion-avatar>
     </ion-item>
   </ion-list>
   <!-- fab placed to the bottom start -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/new-plan">
+    <ion-fab-button routerLink="/new-plan" color="light">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

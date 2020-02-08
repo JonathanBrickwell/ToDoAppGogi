@@ -22,12 +22,8 @@
       <ion-input [(ngModel)]="location"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Datum</ion-label>
-      <ion-input [(ngModel)]="date"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Vrijeme</ion-label>
-      <ion-input [(ngModel)]="time"></ion-input>
+      <ion-label>Datum</ion-label>
+      <ion-datetime [(ngModel)]="date" displayFormat="D MMM YYYY H:mm" placeholder="Select Date"></ion-datetime>
     </ion-item>
   </ion-list>
 
@@ -42,7 +38,7 @@
       <ion-fab-button color="light" routerLink="/" >
         <ion-icon name="arrow-round-back"></ion-icon>
       </ion-fab-button>
-    </ion-fab-list>
+    </ion-fab-list> 
   </ion-fab>
 
 </ion-content>
